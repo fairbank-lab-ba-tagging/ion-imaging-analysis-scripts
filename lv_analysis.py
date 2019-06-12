@@ -172,7 +172,7 @@ def lv_time_cont(lvnum):
 	for i in range(f):
 		frnum=str(i+1).zfill(4)
 		lv_matrix=gr.wf_reader('/home/james/anaconda3/data/'+str(date)+'/lv/'+lvnum+'_'+frnum+'_laser_temp.txt',header=False)
-		for j in lv_matrix[:,2]:
+		for j in lv_matrix[:,-1]:
 			if j >=1e-7:
 				ontime[i]+=1
 		ontime[i]=ontime[i]*ut.avediff(lv_matrix[:,0])
